@@ -15,7 +15,7 @@ namespace carRentAPI.Controllers
         {
             _bookingRepository = bookingRepository;
         }
-
+        // Get Booking 
         [HttpGet]
         public IEnumerable<Booking> GetBookings() => _bookingRepository.GetBookings();
 
