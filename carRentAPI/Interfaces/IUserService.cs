@@ -5,6 +5,7 @@ namespace carRentAPI.Interfaces
 {
 	public interface IUsersService
 	{
+        //user registration interface
         Task<UsersClass> RegisterAsyn(UsersClass user);
         Task<UsersClass> AuthenticateAsync(string username, string password);
         Task<IEnumerable<UsersClass>> GetAllUsers();
