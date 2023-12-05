@@ -5,6 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace carRentAPI.Models
 {
+    //User Model
     public class UsersClass
     {
 
