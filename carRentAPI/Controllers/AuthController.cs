@@ -78,7 +78,7 @@ namespace carRentAPI.Controllers
             }
         }
 
-        // Customer Role API
+        // Client Role API
         [Authorize(Roles = "Customer")]
         [HttpGet("customer-dashboard")]
         public IActionResult AdminDashboard()
