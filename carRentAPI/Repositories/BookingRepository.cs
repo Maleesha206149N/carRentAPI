@@ -20,7 +20,7 @@ namespace carRentAPI.Repositories
         //get booking detail by ID
         public Booking GetBooking(string id) => _bookingsCollection.Find(booking => booking.Id == id).FirstOrDefault();
 
-        //save booking detail
+        //Add booking detail
         public void AddBooking(Booking booking) => _bookingsCollection.InsertOne(booking);
 
         // update booking detail
