@@ -17,12 +17,15 @@ namespace carRentAPI.Controllers
             _carRepository = carRepository;
         }
 
+        //vehicle detail get endpoint
         [HttpGet]
         public IEnumerable<Vehicle> GetCars() => _carRepository.GetCars();
 
+        //get vehicle detail by ID
         [HttpGet("{id}")]
         public ActionResult<Vehicle> GetCar(string id) => _carRepository.GetCar(id);
 
+        //submit vehicle detail
         [HttpPost]
         public ActionResult<Vehicle> AddCar([FromBody] Vehicle car)
         {
@@ -31,6 +34,7 @@ namespace carRentAPI.Controllers
             return car;
         }
 
+        //update vehicle detail
         [HttpPut("{id}")]
         public IActionResult UpdateCar(string id, [FromBody] Vehicle updatedCar)
         {
@@ -38,6 +42,7 @@ namespace carRentAPI.Controllers
             return NoContent();
         }
 
+        //delete vehicle detail
         [HttpDelete("{id}")]
         public IActionResult DeleteCar(string id)
         {
