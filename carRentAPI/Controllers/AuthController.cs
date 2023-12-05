@@ -42,7 +42,7 @@ namespace carRentAPI.Controllers
         {
             try
             {
-                // Register the user.
+                // Register the Car User.
                 var registeredUser = await _userService.RegisterAsyn(user);
 
                 return Ok(new { Message = "Registration successful", User = registeredUser });
@@ -53,7 +53,7 @@ namespace carRentAPI.Controllers
             }
         }
 
-        // User Login API
+        // User Login API EaseDrive
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UsersClass model)
