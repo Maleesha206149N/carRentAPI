@@ -35,7 +35,7 @@ namespace carRentAPI.Controllers
             _userService = userService;
         }
 
-        // POST api/auth/register
+        // User Registration API
         [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UsersClass user)
@@ -53,7 +53,7 @@ namespace carRentAPI.Controllers
             }
         }
 
-
+        // User Login API
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UsersClass model)
@@ -67,7 +67,7 @@ namespace carRentAPI.Controllers
                     return Unauthorized(new { Message = "Invalid username or password" });
                 }
 
-                // Create JWT token for authenticated user.
+                // Create JWT token for authenticated users.
                 var token = GenerateJwtToken(user);
 
                 return Ok(new { Message = "Login successful", Token = token, NIC = user.NIC });
@@ -78,7 +78,7 @@ namespace carRentAPI.Controllers
             }
         }
 
-        // GET api/user/admin-dashboard
+        // Customer Role API
         [Authorize(Roles = "Customer")]
         [HttpGet("customer-dashboard")]
         public IActionResult AdminDashboard()
@@ -86,7 +86,7 @@ namespace carRentAPI.Controllers
             return Ok(new { Message = "Welcome to the Admin Dashboard" });
         }
 
-        // GET api/user/travel-agent-dashboard
+        // Car Renter Role API
         [Authorize(Roles = "CarRenter")]
         [HttpGet("carRenter-dashboard")]
         public IActionResult TravelAgentDashboard()
