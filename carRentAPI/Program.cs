@@ -20,7 +20,7 @@ public class Program
         var configuration = builder.Configuration;
 
 
-        // Configure CORS to allow any origin.
+        // Unable CORS Origin.
         builder.Services.AddCors(options =>
         {
             options.AddPolicy("AllowAnyOrigin", builder =>
@@ -33,7 +33,7 @@ public class Program
         });
 
 
-        // Configure MongoDB settings and register MongoDB client and database.
+        // Configure MongoDB Databse connection.
         builder.Services.Configure<MongoDbSettings>(configuration.GetSection(nameof(MongoDbSettings)));
         builder.Services.AddSingleton<IMongoClient>(sp =>
         {
@@ -54,7 +54,7 @@ public class Program
         builder.Services.AddScoped<IUsersService, UsersRepository>();
         builder.Services.AddSwaggerGen();
 
-
+//Configure Swagger jwt authentication
         builder.Services.AddSwaggerGen(c =>
         {
 
