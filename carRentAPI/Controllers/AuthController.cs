@@ -42,7 +42,7 @@ namespace carRentAPI.Controllers
         {
             try
             {
-                // Register the user.
+                // Register the user in Easydrive
                 var registeredUser = await _userService.RegisterAsyn(user);
 
                 return Ok(new { Message = "Registration successful", User = registeredUser });
