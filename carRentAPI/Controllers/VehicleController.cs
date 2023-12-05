@@ -21,7 +21,7 @@ namespace carRentAPI.Controllers
         [HttpGet]
         public IEnumerable<Vehicle> GetCars() => _carRepository.GetCars();
 
-        //get vehicle detail by ID
+        //get vehicle information by ID
         [HttpGet("{id}")]
         public ActionResult<Vehicle> GetCar(string id) => _carRepository.GetCar(id);
 
