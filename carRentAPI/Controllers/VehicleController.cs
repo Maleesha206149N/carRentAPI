@@ -25,7 +25,7 @@ namespace carRentAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<Vehicle> GetCar(string id) => _carRepository.GetCar(id);
 
-        //submit vehicle detail
+        //upload vehicle detail
         [HttpPost]
         public ActionResult<Vehicle> AddCar([FromBody] Vehicle car)
         {
