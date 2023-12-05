@@ -4,6 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace carRentAPI.Models
 {
+    //Booking model
 	public class Booking
 	{
         [BsonId]
