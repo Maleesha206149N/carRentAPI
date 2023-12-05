@@ -16,12 +16,15 @@ namespace carRentAPI.Controllers
             _bookingRepository = bookingRepository;
         }
 
+        //Booking details get API
         [HttpGet]
         public IEnumerable<Booking> GetBookings() => _bookingRepository.GetBookings();
 
+        //Booking details get by ID
         [HttpGet("{id}")]
         public ActionResult<Booking> GetBooking(string id) => _bookingRepository.GetBooking(id);
 
+        //Booking details submit endpoint
         [HttpPost]
         public ActionResult<Booking> AddBooking([FromBody] Booking booking)
         {
@@ -30,6 +33,7 @@ namespace carRentAPI.Controllers
             return booking;
         }
 
+        //Booking detail update
         [HttpPut("{id}")]
         public IActionResult UpdateBooking(string id, [FromBody] Booking updatedBooking)
         {
@@ -37,6 +41,7 @@ namespace carRentAPI.Controllers
             return NoContent();
         }
 
+        //Booking detail delete endpoint
         [HttpDelete("{id}")]
         public IActionResult DeleteBooking(string id)
         {
