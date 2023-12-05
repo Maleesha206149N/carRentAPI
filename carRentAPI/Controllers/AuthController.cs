@@ -93,7 +93,7 @@ namespace carRentAPI.Controllers
         {
             return Ok(new { Message = "Welcome to the Travel Agent Dashboard" });
         }
-
+        // JWT Token Generate Function
         private string GenerateJwtToken(UsersClass user)
         {
             var claims = new List<Claim>
