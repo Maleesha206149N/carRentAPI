@@ -42,7 +42,7 @@ namespace carRentAPI.Controllers
             return NoContent();
         }
 
-        //delete vehicle detail
+        //remove vehicle detail
         [HttpDelete("{id}")]
         public IActionResult DeleteCar(string id)
         {
