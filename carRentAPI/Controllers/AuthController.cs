@@ -35,7 +35,7 @@ namespace carRentAPI.Controllers
             _userService = userService;
         }
 
-        // User Registration API
+        // New User Registration API
         [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UsersClass user)
