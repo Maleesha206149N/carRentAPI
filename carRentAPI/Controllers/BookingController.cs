@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace carRentAPI.Controllers
 {
+    // App Controller
     [ApiController]
     [Route("api/[controller]")]
     public class BookingController : ControllerBase
@@ -15,7 +16,7 @@ namespace carRentAPI.Controllers
         {
             _bookingRepository = bookingRepository;
         }
-        // Get Booking 
+        
         [HttpGet]
         public IEnumerable<Booking> GetBookings() => _bookingRepository.GetBookings();
 
