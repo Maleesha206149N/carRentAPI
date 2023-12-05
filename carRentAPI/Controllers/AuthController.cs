@@ -35,7 +35,7 @@ namespace carRentAPI.Controllers
             _userService = userService;
         }
 
-        // User Registration API
+        // User Registration API Easydrive
         [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UsersClass user)
