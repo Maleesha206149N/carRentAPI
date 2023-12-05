@@ -23,7 +23,7 @@ namespace carRentAPI.Repositories
         //Add booking detail
         public void AddBooking(Booking booking) => _bookingsCollection.InsertOne(booking);
 
-        // update booking detail
+        // update booking information
         public void UpdateBooking(string id, Booking updatedBooking) =>
             _bookingsCollection.ReplaceOne(booking => booking.Id == id, updatedBooking);
         // delete booking detail
